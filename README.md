@@ -12,3 +12,6 @@ O calendário usa modelos locais de ganchos e os formatos semanais das referênc
 
 
 Envie os cinco arquivos da raiz do ZIP ao repositório, incluindo `.nojekyll`. O HTML utiliza `style.css` e `app.js`; mantenha todos na mesma pasta.
+
+## Versão 2.0
+Cada card contém briefing de produção, roteiro por formato, legenda, objetivo e direção visual, com botão Outra ideia e Copiar briefing. Geração local por modelos, sem IA externa. Os calendários anteriores recebem detalhes automaticamente.
