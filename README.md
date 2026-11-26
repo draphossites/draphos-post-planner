@@ -1,35 +1,14 @@
-# Draphos Post Planner
+# Conteúdo30
+Aplicativo estático de planejamento editorial em português. Abra index.html para testar. Não exige instalação, API, banco de dados ou dependências.
 
-Aplicativo estático para planejar, escrever e acompanhar publicações semanais.
+## Publicar no GitHub Pages
+1. Crie um repositório público no GitHub, por exemplo conteudo30.
+2. Envie index.html e README.md à raiz do repositório.
+3. Em Settings > Pages, escolha Deploy from a branch, main, / (root), Save.
+4. Abra o endereço exibido pelo GitHub Pages.
 
-## Publicar no GitHub Pages (sem instalar nada)
+## Funcionamento
+O calendário usa modelos locais de ganchos e os formatos semanais das referências. O botão de prompt permite obter sugestões mais personalizadas em uma IA externa. A pesquisa de tendências é manual. Os dados ficam no localStorage do navegador; não são sincronizados entre dispositivos. Exporte CSV para guardar o calendário. Não há login nem publicação automática nas redes sociais.
 
-1. Baixe o arquivo `Draphos-Post-Planner-GitHub.zip`.
-2. Extraia o ZIP no seu computador.
-3. Crie um repositório no GitHub com o nome `draphos-post-planner`.
-4. Na página do repositório, clique em **Add file → Upload files**.
-5. Arraste para o GitHub os arquivos extraídos: `index.html`, `style.css`, `app.js` e `.nojekyll`.
-   - Importante: o `index.html` deve ficar na raiz do repositório, não dentro de outra pasta.
-   - Não envie o ZIP fechado; o GitHub Pages precisa dos arquivos extraídos.
-6. Clique em **Commit changes**.
-7. Abra **Settings → Pages**.
-8. Em **Build and deployment**, escolha **Deploy from a branch**.
-9. Selecione a branch `main` e a pasta `/(root)`, depois clique em **Save**.
-10. Aguarde a publicação. O endereço será parecido com:
-    `https://SEU-USUARIO.github.io/draphos-post-planner/`
 
-## Recursos
-
-- Metas semanais Fácil, Médio e Difícil.
-- Calendário e navegação entre semanas.
-- Editor de tema, legenda, formato, data, horário e observações.
-- Status Ideia, Planejado, Pronto e Publicado.
-- Busca, filtros, edição, exclusão e cópia de texto.
-- Exportação do planejamento em TXT.
-- Dados salvos localmente no navegador.
-
-## Observações
-
-- Não precisa de Node.js, banco de dados ou build.
-- Os dados ficam no navegador/dispositivo usado; não sincronizam automaticamente entre dispositivos.
-- O aplicativo organiza o planejamento, mas não publica diretamente no Instagram.
+Envie os cinco arquivos da raiz do ZIP ao repositório, incluindo `.nojekyll`. O HTML utiliza `style.css` e `app.js`; mantenha todos na mesma pasta.
