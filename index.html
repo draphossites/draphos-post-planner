@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ef1717">
+  <meta name="description" content="Organize seus posts da semana com o Draphos Post Planner.">
+  <title>Draphos Post Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Draphos Post Planner">
+        <span class="brand-mark">D</span>
+        <span><strong>draphos</strong><small>POST PLANNER</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="save-indicator"><i></i> Salvo neste dispositivo</span>
+        <button class="icon-btn" id="exportBtn" title="Exportar planejamento" aria-label="Exportar planejamento">⇩</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <div class="eyebrow">SEU CONTEÚDO, SEM COMPLICAÇÃO</div>
+          <h1>Planeje. Escreva.<br><span>Publique com constância.</span></h1>
+          <p>Uma rotina de conteúdo mais leve para você e para seus clientes.</p>
+        </div>
+        <div class="week-stamp"><span>SEMANA</span><strong id="weekLabel">—</strong></div>
+      </section>
+
+      <section class="panel weekly-panel">
+        <div class="section-heading">
+          <div><h2>Minha meta semanal</h2><p>Escolha um ritmo que funcione para você.</p></div>
+          <div class="week-nav">
+            <button class="icon-btn" id="prevWeek" aria-label="Semana anterior">‹</button>
+            <button class="icon-btn" id="nextWeek" aria-label="Próxima semana">›</button>
+            <button class="today-btn" id="thisWeek">Hoje</button>
+          </div>
+        </div>
+        <div class="levels" role="group" aria-label="Nível de postagem">
+          <button class="level active" data-level="easy"><span class="level-dot green"></span><strong>Fácil</strong><small>3 posts</small></button>
+          <button class="level" data-level="medium"><span class="level-dot yellow"></span><strong>Médio</strong><small>5 posts</small></button>
+          <button class="level" data-level="hard"><span class="level-dot red"></span><strong>Difícil</strong><small>7 posts</small></button>
+        </div>
+        <div class="week-grid" id="weekGrid"></div>
+        <div class="legend"><span><i class="legend-dot red"></i> Post planejado</span><span><i class="legend-dot gray"></i> Dia livre</span><span>Selecione um dia para criar ou editar.</span></div>
+      </section>
+
+      <section class="dashboard">
+        <section class="panel editor-panel">
+          <div class="section-heading">
+            <div><div class="eyebrow">EDITOR DE CONTEÚDO</div><h2 id="editorTitle">Criar publicação</h2></div>
+            <span class="day-pill" id="selectedDayPill">SEGUNDA</span>
+          </div>
+          <form id="postForm">
+            <input type="hidden" id="postId">
+            <div class="form-row">
+              <label>Formato
+                <select id="format">
+                  <option>Reels</option><option>Carrossel</option><option>Estático</option><option>Stories</option><option>Texto</option><option>Vídeo</option>
+                </select>
+              </label>
+              <label>Status
+                <select id="status"><option>Ideia</option><option>Planejado</option><option>Pronto</option><option>Publicado</option></select>
+              </label>
+            </div>
+            <label>Tema / título do post
+              <input id="topic" maxlength="140" placeholder="Ex.: 3 dicas para divulgar sua empresa" required>
+            </label>
+            <label>Texto da publicação
+              <textarea id="caption" rows="7" placeholder="Escreva sua legenda, chamada para ação e hashtags..."></textarea>
+            </label>
+            <div class="form-row">
+              <label>Data
+                <input id="date" type="date" required>
+              </label>
+              <label>Horário
+                <input id="time" type="time" value="18:00">
+              </label>
+            </div>
+            <label>Observações (opcional)
+              <input id="notes" maxlength="300" placeholder="Imagem que falta, aprovação do cliente, etc.">
+            </label>
+            <div class="form-actions">
+              <button type="button" class="btn secondary" id="clearForm">Limpar</button>
+              <button type="submit" class="btn primary" id="savePost">Salvar publicação <span>↗</span></button>
+            </div>
+            <p class="privacy-note">Seus dados ficam salvos no navegador deste dispositivo.</p>
+          </form>
+        </section>
+
+        <aside class="panel list-panel">
+          <div class="section-heading">
+            <div><div class="eyebrow">ACOMPANHAMENTO</div><h2>Meus posts</h2></div>
+            <button class="text-btn" id="clearWeek">Limpar semana</button>
+          </div>
+          <div class="stats">
+            <div><strong id="statPlanned">0</strong><span>Planejados</span></div>
+            <div><strong id="statReady">0</strong><span>Prontos</span></div>
+            <div><strong id="statPublished">0</strong><span>Publicados</span></div>
+          </div>
+          <div class="filter-row">
+            <input id="searchPosts" type="search" placeholder="Buscar publicação...">
+            <select id="filterStatus" aria-label="Filtrar por status"><option value="all">Todos</option><option>Ideia</option><option>Planejado</option><option>Pronto</option><option>Publicado</option></select>
+          </div>
+          <div id="postList" class="post-list"></div>
+          <div class="empty-state" id="emptyState"><div class="empty-icon">✎</div><strong>Seu planejamento começa aqui</strong><p>Escolha um dia e escreva sua primeira publicação.</p></div>
+        </aside>
+      </section>
+    </main>
+    <footer><span>DRAPHOS POST PLANNER</span><span>Você imagina. Nós organizamos.</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
